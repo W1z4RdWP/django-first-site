@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 
+{% load static %}
+
 {% block title %}
     Home
 {% endblock %}
@@ -8,4 +10,27 @@
     <h1>Home</h1>
     <p>Welcome to the home page</p>
     <p>Also visit <a href="/about">about</a> page</p>
+    <br>
+<!-- TODO: Разобраться с отображением на мобильниках -->
+    <div class="top-users" id="top-users">
+        <h2>Топ-10 пользователей</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Место</th>
+                    <th>Пользователь</th>
+                    <th>Пройдено курсов</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in top_users %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.courses_completed }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

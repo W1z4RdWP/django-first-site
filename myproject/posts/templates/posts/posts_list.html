@@ -8,20 +8,27 @@
 
     <section>
         <h1 id='posts_head'>Posts</h1>
-        {% for post in posts %}
-            <article class="post">
-                <hr>
-                <h2>
-                    <a href="{% url 'posts:page' slug=post.slug %}">
-                        {{ post.title }}
-                    </a>
-                </h2>
-                <p>{{ post.date }} by {{ post.author }}</p>
-                <p>{{ post.body }}</p>
-                
-                <br>
-            </article>
-        {% endfor %}
+        {% if posts %}
+            {% for post in posts %}
+                <article class="post">
+                    <hr>
+                    <h2>
+                        <a href="{% url 'posts:page' slug=post.slug %}">
+                            {{ post.title }}
+                        </a>
+                    </h2>
+                    <p>{{ post.date }} by {{ post.author }}</p>
+                    <p>{{ post.body }}</p>
+                    
+                    <br>
+                </article>
+            {% endfor %}
+        {% else %}
+            <div class="no-posts">
+                <p>📭 Пока нет ни одного поста</p>
+                <p>Будьте первым, кто создаст пост!</p>
+            </div>
+        {% endif %}
     </section>
 {% endblock %}
 

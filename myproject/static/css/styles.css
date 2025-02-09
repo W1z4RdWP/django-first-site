@@ -6,7 +6,7 @@
 
 body {
     min-height: 100vh;
-    background-color: black;
+    background-color: #434343;
     color: whitesmoke;
     font-size: 3rem;
 }
@@ -107,4 +107,58 @@ a:hover {
 
 .logout-button:hover{
     opacity: .85;
+}
+
+.about_project p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.no-posts p{
+    font-size: 3rem;
+}
+
+/* Топ-10 пользователей */
+.top-users {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Смещение для точного центрирования */
+    width: 80%; /* Ширина таблицы */
+    max-width: 800px; /* Максимальная ширина для больших экранов */
+    z-index: 999; /* Чтобы таблица была поверх остальных элементов */
+    background-color: #333; /* Цвет фона таблицы */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25); /* Тень для визуального отделения */
+}
+
+
+#top-users h2 {
+    margin-bottom: 1rem;
+}
+
+#top-users table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#top-users th,
+#top-users td {
+    padding: 0.75rem;
+    border: 1px solid #81dbb8;
+}
+
+#top-users th {
+    background-color: #44B78B;
+    color: white;
+}
+
+#top-users tbody tr:nth-child(even) {
+    background-color: #666;
+}
+
+#top-users tbody tr:hover {
+    background-color: #555;
 }
